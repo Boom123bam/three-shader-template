@@ -35,7 +35,8 @@ const uniformData = {
   },
 };
 
-const geometry = new THREE.BoxGeometry(10, 10, 10, 20, 20, 20);
+// const geometry = new THREE.BoxGeometry(10, 10, 10, 20, 20, 20);
+const geometry = new THREE.SphereGeometry(10, 20, 50);
 
 const material = new THREE.ShaderMaterial({
   // wireframe: true,
