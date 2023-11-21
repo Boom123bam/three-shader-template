@@ -1,6 +1,7 @@
 uniform float u_time;
 // varying vec2 vUv;
 varying float waveHeight;
+
 void main(){
   // vUv = uv;
 
@@ -10,8 +11,6 @@ void main(){
   waveHeight = (sin(position.y * 1. + u_time * 1. ) + 1.) * .5;
 
   displacement *= waveHeight;
-
-  // displacement = vec3(0);
 
   vec3 final = position - displacement;
   gl_Position = projectionMatrix *
