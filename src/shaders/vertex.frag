@@ -5,15 +5,13 @@ varying float waveHeight;
 void main(){
   // vUv = uv;
 
-  vec4 origin = vec4(0.0, 0.0, 0.0, 1.0);
-  vec4 toOrigin = normalize(origin - modelMatrix * vec4(position, 1.0));
-  vec3 displacement = vec3(toOrigin.x,0,toOrigin.z) * .5;
-  waveHeight = (sin(position.y * 1. + u_time * 1. ) + 1.) * .5;
+  vec3 displacement = vec3(normal.x,0,normal.z);
+  waveHeight = .5 + .5 * sin(position.y + u_time);
 
   displacement *= waveHeight;
 
-  vec3 final = position - displacement;
+  vec3 finalPos = position + displacement;
   gl_Position = projectionMatrix *
     modelViewMatrix *
-    vec4(final, 1.);
+    vec4(finalPos, 1.);
 }
