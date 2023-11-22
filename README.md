@@ -5,8 +5,19 @@ This is my template to quickly setup a TS + Three.js project so that I can mess 
 
 # How to use
 
-1. Clone the repository
-2. `npm i`
-3. `npm run dev`
+### Clone the repository
+```
+gh repo clone Boom123bam/three-shader-template
+```
+
+### Install
+```
+npm i
+```
+
+### Run
+```
+npm run dev
+```
 
 Done! Now you can edit **vertex.frag** and **fragment.frag** to update the shader.
